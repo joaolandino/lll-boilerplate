@@ -136,8 +136,7 @@ gulp.task('deploy', function () {
   ];
 
   return gulp.src( globs, { base: '', buffer: false } )
-  .pipe( conn.newer( '/public_html' ) ) // only upload newer files
-  .pipe(conn.dest('/public_html'));
+  .pipe(conn.dest('/public'));
 });
 
 gulp.task('dev', ['scss', 'webserver', 'watch', 'sw']);
